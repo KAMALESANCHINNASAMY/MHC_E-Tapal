@@ -1,299 +1,145 @@
-<!-- {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MHC {{ title|default:'WebApp' }}</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg align-items-center" style="color: gray !important;background-color: white;border-bottom: 1px solid lightgray;height: 55px;justify-content: space-between;padding: 0px 15px;position:sticky;top: 0;z-index: 9;">
-      <div class="d-flex align-items-center">
-        <i class="bi bi-list"></i>
-
-        <a class="nav-link {% if request.resolver_match.url_name == 'new-ticket' %}
-            
-            
-            
-            active text-dark
-
-
-
-          {% else %}
-            
-            
-            
-            text-gray
-
-
-
-          {% endif %}">
-          New Ticket
-        </a>
-      </div>
-
-      <div>
-        <h4 class="text-dark">HIGH COURT OF MADRAS</h4>
-      </div>
-
-      <div class="d-flex align-items-center" style="gap: 20px;">
-        <a href="/admin/login/" style="text-decoration: none;color: gray;">Admin Login</a>
-
-        <i class="bi bi-person"></i>
-      </div>
-    </nav>
-
-    {% block content %}
-
-    {% endblock %}
-  </body>
-</html> -->
-
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>E-Tapal</title>
+    <script src="{% static 'js/scripts.js' %}"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Static Navigation - SB Admin</title>
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  <script src="{% static 'js/scripts.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <link href="css/styles.css" rel="stylesheet" />
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-</head>
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
-<body>
-  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">ETAPAL</a>
-    <!-- Sidebar Toggle-->
-    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-        class="fas fa-bars"></i></button>
-    <!-- Navbar Search-->
-    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
-          aria-describedby="btnNavbarSearch" />
-        <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-      </div>
-    </form>
-    <!-- Navbar-->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#!">Settings</a></li>
-          <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-          <li><a class="dropdown-item" href="#!">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <div id="layoutSidenav">
-    <div id="layoutSidenav_nav">
-      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-        <div class="sb-sidenav-menu">
-          <div class="nav">
-            <div class="sb-sidenav-menu-heading">Core</div>
-            <a class="nav-link" href="index.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-              Dashboard
-            </a>
-            <div class="sb-sidenav-menu-heading">Interface</div>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-              aria-expanded="false" aria-controls="collapseLayouts">
-              <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-              Etapal
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="New.html">New</a>
-                <a class="nav-link" href="inbox.html">Inbox</a>
-              </nav>
-            </div>
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
-              aria-expanded="false" aria-controls="collapsePages">
-              <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-              Pages
-              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-              <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth"
-                  aria-expanded="false" aria-controls="pagesCollapseAuth">
-                  Authentication
-                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                  data-bs-parent="#sidenavAccordionPages">
-                  <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="login.html">Login</a>
-                    <a class="nav-link" href="register.html">Register</a>
-                    <a class="nav-link" href="password.html">Forgot Password</a>
-                  </nav>
-                </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError"
-                  aria-expanded="false" aria-controls="pagesCollapseError">
-                  Error
-                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                  data-bs-parent="#sidenavAccordionPages">
-                  <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="401.html">401 Page</a>
-                    <a class="nav-link" href="404.html">404 Page</a>
-                    <a class="nav-link" href="500.html">500 Page</a>
-                  </nav>
-                </div>
-              </nav>
-            </div>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  </head>
 
-          </div>
+  <body>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <!-- Navbar Brand -->
+      <a class="navbar-brand ps-3" href="index.html">ETAPAL</a>
+      <!-- Sidebar Toggle -->
+      <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+      <!-- Navbar Search -->
+      <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+          <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
         </div>
-        <div class="sb-sidenav-footer">
-          <div class="small">Logged in as:</div>
-          Start Bootstrap
-        </div>
-      </nav>
-    </div>
-    <div id="layoutSidenav_content">
-      <main>
-        <!-- <div class="container-fluid">
-          <h2 class="mt-2">Send Message</h2>
-          <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.html">Message</a></li>
-            <li class="breadcrumb-item active">New Message</li>
-          </ol>
-
-          <div class="row">
-            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
-
-              <label>S.no</label>
-              <input type="text" placeholder="Com-023" class="form-control " readonly required>
-            </div>
-
-            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
-
-              <label>Date <span class="text-danger">*</span></label>
-              <input type="date" class="form-control " required>
-            </div>
-
-            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
-
-              <label>Select Court <span class="text-danger">*</span></label>
-              <select class="form-control">
-                <option disabled>--Select Court--</option>
-              </select>
-            </div>
-
-
-            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
-
-              <label>Select Section <span class="text-danger">*</span></label>
-              <select class="form-control">
-                <option disabled>--Select Section--</option>
-              </select>
-            </div>
-
-
-            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
-
-              <label>Select Receiver <span class="text-danger">*</span></label>
-              <select class="form-control">
-                <option disabled>--Select Receiver--</option>
-              </select>
-            </div>
-
-          </div>
-
-          <div class="row mt-3">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-              <label>Subject <span class="text-danger">*</span></label>
-
-              <textarea class="form-control" rows="1">
-
-                                </textarea>
-            </div>
-          </div>
-
-
-
-
-
-          <div class="row mt-3">
-
-            <div class="mb-2 editor-toolbar btn-group" role="group">
-              <button type="button" class="btn btn-outline-secondary" onclick="formatText('bold')"><b>B</b></button>
-              <button type="button" class="btn btn-outline-secondary" onclick="formatText('italic')"><i>I</i></button>
-              <button type="button" class="btn btn-outline-secondary"
-                onclick="formatText('underline')"><u>U</u></button>
-              <button type="button" class="btn btn-outline-secondary" onclick="formatText('insertUnorderedList')">•
-                List</button>
-              <button type="button" class="btn btn-outline-secondary" onclick="formatText('insertOrderedList')">1.
-                List</button>
-            </div>
-
-            <div id="editor" class="editor-content form-control m-2" style="min-height: 150px;" contenteditable="true">
-              Type your message here...
-            </div>
-
-            <script>
-              function formatText(command) {
-                document.execCommand(command, false, null);
-              }
-            </script>
-
-
-          </div>
-
-          <div class="d-flex justify-content-end">
-
-            <div class="btn-toolbar mb-2" role="toolbar">
-              <div class="btn-group me-2" role="group">
-                <button type="button" class="btn btn-secondary" title="Copy text from another source"><i
-                    class="fas fa-file-import me-1"></i></button>
-                <button type="button" class="btn btn-secondary" title="Add files"><i
-                    class="fas fa-paperclip me-1"></i></button>
-                <button type="button" class="btn btn-secondary" title="Copy"><i class="fas fa-copy me-1"></i></button>
+      </form>
+      <!-- Navbar -->
+      <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#!">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#!">Activity Log</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item" href="#!">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading">Core</div>
+              <a class="nav-link" href="index.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>Dashboard
+              </a>
+              <a class="nav-link" href="{% url 'tapal:new-tapal' %}">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>New Tapal
+              </a>
+              <a class="nav-link" href="{% url 'tapal:list-tapal' %}">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>List Tapal
+              </a>
+              <div class="sb-sidenav-menu-heading">Interface</div>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-columns"></i>
+                </div>Etapal<div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="New.html">New</a>
+                  <a class="nav-link" href="inbox.html">Inbox</a>
+                </nav>
+              </div>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>Pages<div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a>
+              <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                    Authentication<div class="sb-sidenav-collapse-arrow">
+                      <i class="fas fa-angle-down"></i>
+                    </div>
+                  </a>
+                  <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                    <nav class="sb-sidenav-menu-nested nav">
+                      <a class="nav-link" href="login.html">Login</a>
+                      <a class="nav-link" href="register.html">Register</a>
+                      <a class="nav-link" href="password.html">Forgot Password</a>
+                    </nav>
+                  </div>
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                    Error<div class="sb-sidenav-collapse-arrow">
+                      <i class="fas fa-angle-down"></i>
+                    </div>
+                  </a>
+                  <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                    <nav class="sb-sidenav-menu-nested nav">
+                      <a class="nav-link" href="401.html">401 Page</a>
+                      <a class="nav-link" href="404.html">404 Page</a>
+                      <a class="nav-link" href="500.html">500 Page</a>
+                    </nav>
+                  </div>
+                </nav>
               </div>
             </div>
           </div>
-
-
-          <div class="d-flex flex-wrap" style="gap: 20px;">
-            <button type="button" class="btn btn-success btn-sm">
-              <span class="glyphicon glyphicon-send"></span> Send
-            </button>
-
-            <button type="button" class="btn btn-danger btn-sm">
-              <span class="glyphicon glyphicon-send"></span> Cancel
-            </button>
+          <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>Start Bootstrap
           </div>
+        </nav>
+      </div>
+      <div id="layoutSidenav_content">
+        <main>
+          {% block content %}
 
-        </div> -->
-      </main>
+          {% endblock %}
+        </main>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

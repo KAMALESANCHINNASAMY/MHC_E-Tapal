@@ -4,5 +4,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
-    return render(request,'layout.html')
+def newtapal(request):
+    return render(request, 'newtapal.html')
+
+
+def list_tapal(request):
+    return render(request, 'listtapal.html')
