@@ -1,4 +1,31 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h2>List Tapal</h2>
+<h2>List Tapal</h2>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="input-group">
+      <label>Section</label>
+      <input type="text" placeholder="Enter section">
+    </div>
+    <div class="input-group">
+      <label>From</label>
+      <input type="text" placeholder="Sender name">
+    </div>
+    <div class="input-group">
+      <label>To</label>
+      <input type="text" placeholder="Receiver name">
+    </div>
+  </div>
+
+  <div class="content-label">Content</div>
+  <div class="content-box" contenteditable="true">
+    Type your message here...
+  </div>
+
+  <div class="buttons">
+    <button><span>&larr;</span> Reply</button>
+    <button>Forward <span>&rarr;</span></button>
+  </div>
+</div>
 {% endblock %}

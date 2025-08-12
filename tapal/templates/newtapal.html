@@ -1,4 +1,110 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h2>New Tapal</h2>
+<div class="container-fluid">
+  <h2 class="mt-2">Send Message</h2>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">New Message</li>
+  </ol>
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
+
+      <label>S.no</label>
+      <input type="text" placeholder="Com-023" class="form-control " readonly required>
+    </div>
+
+    <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
+
+      <label>Date <span class="text-danger">*</span></label>
+      <input type="date" class="form-control " required>
+    </div>
+
+    <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
+
+      <label>Select Court <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option disabled>--Select Court--</option>
+      </select>
+    </div>
+
+
+    <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
+
+      <label>Select Section <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option disabled>--Select Section--</option>
+      </select>
+    </div>
+
+
+    <div class="col-sm-12 col-md-10 col-lg-6 col-xl-4 mt-3">
+
+      <label>Select Receiver <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option disabled>--Select Receiver--</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label>Subject <span class="text-danger">*</span></label>
+
+      <textarea class="form-control" rows="1">
+
+                                </textarea>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="row mt-3">
+
+    <div class="mb-2 editor-toolbar btn-group" role="group">
+      <button type="button" class="btn btn-outline-secondary" onclick="formatText('bold')"><b>B</b></button>
+      <button type="button" class="btn btn-outline-secondary" onclick="formatText('italic')"><i>I</i></button>
+      <button type="button" class="btn btn-outline-secondary" onclick="formatText('underline')"><u>U</u></button>
+      <button type="button" class="btn btn-outline-secondary" onclick="formatText('insertUnorderedList')">•
+        List</button>
+      <button type="button" class="btn btn-outline-secondary" onclick="formatText('insertOrderedList')">1. List</button>
+    </div>
+
+    <div id="editor" class="editor-content form-control p-2" style="min-height: 150px;" contenteditable="true">
+      Type your message here...
+    </div>
+
+    <script>
+      function formatText(command) {
+        document.execCommand(command, false, null);
+      }
+    </script>
+
+
+  </div>
+
+  <div class="d-flex justify-content-end">
+
+    <div class="btn-toolbar mb-2" role="toolbar">
+      <div class="btn-group me-2" role="group">
+        <button type="button" class="btn btn-secondary" title="Copy text from another source"><i
+            class="fas fa-file-import me-1"></i></button>
+        <button type="button" class="btn btn-secondary" title="Add files"><i class="fas fa-paperclip me-1"></i></button>
+        <button type="button" class="btn btn-secondary" title="Copy"><i class="fas fa-copy me-1"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="d-flex flex-wrap" style="gap: 20px;">
+    <button type="button" class="btn btn-success btn-sm">
+      <span class="glyphicon glyphicon-send"></span> Send
+    </button>
+
+    <button type="button" class="btn btn-danger btn-sm">
+      <span class="glyphicon glyphicon-send"></span> Cancel
+    </button>
+  </div>
+</div>
 {% endblock %}
